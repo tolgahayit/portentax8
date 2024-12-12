@@ -1,13 +1,11 @@
-# Sistem Python'ı kullanıldığı için temel imaj belirlemiyoruz
-
 # Çalışma dizinini ayarla
 WORKDIR /app
 
 # Proje dosyalarını kopyala
 COPY . .
 
-# Gerekli Python paketlerini yükle
+# Gerekli bağımlılıkları yükle
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Uygulamayı çalıştır
-CMD ["python3", "main.py"]
+# Etkileşimli terminal açılması için bir komut belirtme
+CMD ["/bin/bash"]
