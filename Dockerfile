@@ -1,9 +1,8 @@
-FROM python:3.9
-
+# Çalışma dizinini ayarla
 WORKDIR /app
 
+# Proje dosyalarını kopyala
 COPY . .
 
-RUN pip install -r requirements.txt
-
-CMD ["python3", "main.py"]
+# Gerekli Python paketlerini yükle
+RUN pip install --no-cache-dir -r requirements.txt
