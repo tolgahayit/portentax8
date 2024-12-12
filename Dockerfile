@@ -2,8 +2,8 @@ FROM python:3.9
 
 WORKDIR /app
 
-RUN pip install numpy
+COPY . .
 
-COPY script.py /app
+RUN pip install -r requirements.txt
 
-CMD ["python3", "script.py"]
+CMD ["python3", "main.py"]
