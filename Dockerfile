@@ -1,11 +1,11 @@
-# Çalışma dizinini ayarla
+# Resmi Python Docker imajını kullan
+#FROM python:3.9
+
+# Çalışma dizini oluştur
 WORKDIR /app
 
-# Proje dosyalarını kopyala
-COPY . .
+# Gerekli paketleri yükle
+RUN pip install numpy
 
-# Gerekli bağımlılıkları yükle
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Etkileşimli terminal açılması için bir komut belirtme
-CMD ["/bin/bash"]
+# Konteyner giriş noktası
+CMD ["python3"]
